@@ -13,34 +13,6 @@
     <button id="helloButton"> Agir!</button>
 </body>
 
-<script>
-
-    Office.onReady((info) => {
-        if (info.host === Office.HostType.Outlook) {
-            document.getElementById("helloButton").onclick = sayHello;
-        }
-    });
-
-    /**
-     * Writes 'Hello world!' to a new message body.
-     */
-    function sayHello() {
-        Office.context.mailbox.item.body.setAsync(
-            "Agir!",
-            {
-                coercionType: "html", // Write text as HTML
-            },
-
-            // Callback method to check that setAsync succeeded
-            function (asyncResult) {
-                if (asyncResult.status ==
-                    Office.AsyncResultStatus.Failed) {
-                    write(asyncResult.error.message);
-                }
-            }
-        );
-    }
-
-</script>
+<script id="datagir-impact-co2" src="https://impactco2.fr/iframe.js" data-type="tuiles" data-search="?theme=default"></script>
 
 </html>
